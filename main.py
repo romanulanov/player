@@ -1,4 +1,4 @@
-from livereload import Server, shell
+from livereload import Server
 
 
 def rebuild():
