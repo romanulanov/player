@@ -4,17 +4,37 @@
     <meta charset="utf-8">
     <title>Плеер</title>
     <link rel="stylesheet" href="font-awesome.min.css">
+    
+    <style media="screen">
+    .div-player {
+            width: 800px;
+            height: 600px;
+            cursor: pointer;
+            }
+    .div-video-container {
+      width: 100%;
+      height: 100%
+    }
+    .black-div {
+      background-color:black;
+    }
+    .button-player {
+      border-style: none;
+      background-color:transparent;
+      color:white;
+    } 
+   
+  </style>
 </head>
 <body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
-  
-  <div id="player" style="width: 800px; height: 600px; cursor: pointer;">
-      <div class="js-video-container" style="width: 100%; height: 100%"></div>
-      <div style="background-color:black;" >
-        <button class="js-play-button" style="border-style: none; background-color:transparent;color:white;"><i class="fa fa-play"   aria-hidden="true"></i>
-        <button class="js-pause-button" style="border-style: none; background-color:transparent;color:white;"><i class="fa fa-pause" aria-hidden="true"></i>
+  <div id="player" class="div-player">
+      <div class="js-video-container div-video-container"></div>
+      <div class="black-div" >
+        <button class="js-play-button button-player" ><i class="fa fa-play"   aria-hidden="true"></i>
+        <button class="js-pause-button button-player" ><i class="fa fa-pause" aria-hidden="true"></i>
       </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
