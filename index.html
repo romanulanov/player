@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="font-awesome.min.css">
   <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
   <style media="screen">
-    .div-player {
+    .vp-player {
       display: flex;
       flex-direction: column;
       width: 800px;
@@ -14,19 +14,28 @@
       cursor: pointer;
       box-shadow: 0 0 10px rgba(0,0,0,0.9)
     }
-    .div-video-container {
+    .vp-player__container {
       flex-grow: 1;
     }
-    .black-div {
+   
+    .vp-player__controlls {
       background-color:black;
+      display: flex;
+      align-items: center;
     }
-    .button-player {
-      flex-grow: 1;
+    .vp-player__progressbar {
+      background-color:black;
+      flex-grow:4;
+      align-items: center;
+    }
+    
+    .vp-player__button {
       font-size:large;
       border-style: none;
+      width: 35px;
+      height: 35px;
       background-color:transparent;
-      color:white;
-      margin: 0px 10px 10px 5px; 
+      color:white; 
     }
   </style>
 </head>
@@ -34,16 +43,16 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
-  <div id='player' class="div-player">
-    <div class="js-video-container div-video-container"></div>
-    <div class="black-div" >
-      <button class="js-play-button button-player" ><i class="fa fa-play"   aria-hidden="true"></i></button>
-      <button class="js-pause-button button-player" ><i class="fa fa-pause" aria-hidden="true"></i></button>
-      <button class="js-mute-button button-player" ><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-      <button class="js-volume-button button-player" ><i class="fa fa-volume-off" aria-hidden="true"></i></button>
-      
-      <button class="js-fullscreen-button button-player" ><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
-    </div>
+  <div id='player' class="vp-player">
+    <div class="js-video-container vp-player__container"></div>
+      <div class="vp-player__controlls" >
+        <button class="js-play-button vp-player__button" ><i class="fa fa-play"   aria-hidden="true"></i></button>
+        <button class="js-pause-button vp-player__button" ><i class="fa fa-pause" aria-hidden="true"></i></button>
+        <button class="js-mute-button vp-player__button" ><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+        <button class="js-volume-button vp-player__button" ><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+        <div class="vp-player__progressbar" ></div>
+        <button class="js-fullscreen-button vp-player__button" ><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+      </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
@@ -51,7 +60,5 @@
   <script type="text/javascript">
     createPlayer({elementId: 'player'});
   </script>
-
-  
 </body>
 </html>
